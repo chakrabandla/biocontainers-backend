@@ -1,4 +1,4 @@
-name: Biocontainer pipelines publish Docker image
+name: Biocontainer annotations publish Docker image
 env:
   IMAGE_NAME: biocontainer-annotations
 
