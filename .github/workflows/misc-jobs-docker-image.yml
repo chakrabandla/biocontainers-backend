@@ -1,6 +1,6 @@
 name: Biocontainer annotations publish Docker image
 env:
-  IMAGE_NAME: biocontainer-annotations
+  IMAGE_NAME: biocontainer-misc-jobs
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
           echo $GITHUB_REPOSITORY
       - name: Build the Docker image
         run: |
-          cd dockerfiles/annotations_yml_generator/
+          cd dockerfiles/misc_jobs/
           pwd
           docker build --build-arg CACHEBUST=$(date +%s) --tag $IMAGE_NAME:$GITHUB_SHA .
           docker tag $IMAGE_NAME:$GITHUB_SHA docker.pkg.github.com/$GITHUB_REPOSITORY/$IMAGE_NAME:$GITHUB_SHA
